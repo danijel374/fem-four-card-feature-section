@@ -1,0 +1,189 @@
+/* poppins-200 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 200;
+  src: url("../fonts/poppins-v23-latin-200.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* poppins-regular - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/poppins-v23-latin-regular.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* poppins-600 - latin */
+@font-face {
+  font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+  font-family: "Poppins";
+  font-style: normal;
+  font-weight: 600;
+  src: url("../fonts/poppins-v23-latin-600.woff2") format("woff2"); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
+  --grey-500: hsl(234, 12%, 34%);
+  --grey-400: hsl(212, 6%, 44%);
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --blue: hsl(212, 86%, 64%);
+  --orange: hsl(34, 97%, 64%);
+
+  --spacing-500: 2.5rem;
+  --spacing-400: 2rem;
+  --spacing-300: 1.5rem;
+  --spacing-200: 1rem;
+  --spacing-100: 0.5rem;
+}
+
+.text-preset-1-600 {
+  font-size: clamp(1.5rem, 1.2359rem + 1.1268vw, 2.25rem);
+  line-height: 1.4;
+  letter-spacing: 0.25px;
+  color: var(--grey-500);
+  font-weight: 600;
+}
+.text-preset-2-200 {
+  font-size: clamp(1.5rem, 1.2359rem + 1.1268vw, 2.25rem);
+  line-height: 1.4;
+  letter-spacing: 0.25px;
+  color: var(--grey-500);
+  font-weight: 200;
+}
+.text-preset-3-600 {
+  font-size: 1.25rem;
+  line-height: 1.35;
+  letter-spacing: 0px;
+  color: var(--grey-500);
+  font-weight: 600;
+}
+.text-preset-4-400 {
+  font-size: 0.9375rem;
+  line-height: 1.4;
+  letter-spacing: 0px;
+  color: var(--grey-500);
+  font-weight: 400;
+}
+.text-preset-5-400 {
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  letter-spacing: 0px;
+  color: var(--grey-400);
+  font-weight: 400;
+}
+
+main {
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: var(--spacing-400);
+  display: grid;
+  place-items: center;
+  align-items: start;
+}
+
+header {
+  line-height: 0;
+  margin-block-end: 3.75rem;
+  margin-block-start: var(--spacing-300);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-200);
+}
+
+@media (width >= 48rem) {
+  header {
+    max-inline-size: 33.75rem;
+    margin-block-start: 4.2rem;
+    margin-block-end: -3rem;
+  }
+}
+
+/* feature section */
+.feature-section {
+  display: grid;
+  gap: var(--spacing-400);
+}
+
+@media (width >= 48rem) {
+  .feature-section {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 15.625rem);
+  }
+}
+
+/* card */
+
+.card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 15px 30px -11px hsla(213, 47%, 67%, 50%);
+  border-radius: 8px;
+  gap: var(--spacing-400);
+  border-block-start: 4px solid var(--black);
+  padding: var(--spacing-400);
+  min-block-size: 15.625rem;
+}
+
+.card__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.card__icon {
+  align-self: flex-end;
+}
+
+.card--red {
+  border-color: var(--red);
+}
+.card--orange {
+  border-color: var(--orange);
+}
+.card--blue {
+  border-color: var(--blue);
+}
+.card--cyan {
+  border-color: var(--cyan);
+}
+@media (width >= 48rem) {
+  .card {
+    max-inline-size: 21.875rem;
+    padding: var(--spacing-300) var(--spacing-400) var(--spacing-400)
+      var(--spacing-400);
+  }
+
+  .card--cyan {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    align-self: center;
+  }
+
+  .card--blue {
+    grid-column-start: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    align-self: center;
+  }
+}
